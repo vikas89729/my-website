@@ -446,3 +446,93 @@ section p {
   list-style-type: disc;
   margin-left: 20px;
 }
+footer {
+  background: #222;        
+  color: white;             
+  text-align: center;       
+  padding: 20px 0;          
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .icon {
+  margin-top: 10px;
+}
+
+footer .icon a {
+  display: inline-block;
+  margin: 0 8px;
+}
+@media (max-width: 600px) {
+  header{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  .banner{
+    padding-top: 120px;
+    height: 40vh;
+  }
+  .clothes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact {
+    width: 90%;
+    padding: 20px;
+  }
+  .clothes-container{
+     flex-direction: column;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;   /* cards full width on small screen */
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+
+  footer .icon img {
+    width: 20px;
+  }
+}
+
+/* Tablet (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    justify-content: space-around;
+  }
+
+  .card {
+    flex: 1 1 45%;   /* 2 cards per row */
+  }
+}
+
+/* Desktop (above 901px) */
+@media (min-width: 901px) {
+  .container {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 30%;   /* 3 cards per row */
+  }
+}
