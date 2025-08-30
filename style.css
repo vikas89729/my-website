@@ -1,4 +1,4 @@
-/* Reset */
+/* ================== RESET ================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +9,9 @@
 body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #1e1e1e;
-  font-family: Arial, sans-serif;
 }
 
-/* Header */
+/* ================== HEADER ================== */
 header {
   background: #000;
   color: #fff;
@@ -20,9 +19,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  z-index: 1000;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 header .logo {
@@ -49,7 +48,27 @@ header .nav ul li a:hover {
   color: #ffcc00;
 }
 
-/* Banner */
+/* Hamburger (hidden on desktop) */
+header .hamburger {
+  display: none;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  position: relative;
+}
+header .hamburger span {
+  background: #fff;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+header .hamburger span:nth-child(1) { top: 0; }
+header .hamburger span:nth-child(2) { top: 8px; }
+header .hamburger span:nth-child(3) { top: 16px; }
+
+/* ================== BANNER ================== */
 .banner {
   height: 50vh;
   width: 100%;
@@ -62,6 +81,7 @@ header .nav ul li a:hover {
   color: #fff;
   padding-top: 220px;
   border-radius: 10px;
+  position: relative;
 }
 
 .banner h1 {
@@ -90,163 +110,92 @@ header .nav ul li a:hover {
   background: rgb(235, 235, 12);
 }
 
-/* Box */
-.box {
+/* ================== CLOTHES SECTION ================== */
+.clothes {
+  padding: 40px 20px;
+  background: #f5f5f5;
   text-align: center;
 }
 
-.box h2 {
-  font-size: 2rem;
-  color: white;
-  text-align: center;
-  transition: color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.box h2:hover {
-  color: yellow;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Clothes Section */
 .clothes-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  color: #f4f4f4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .cloth-item {
-  position: relative;
-  width: 280px;
-  height: 380px;
-  border-radius: 15px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  /* background-color: #1a1a1a; */
-  background-blend-mode: multiply;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Background images for cards */
-#card1 { background-image: url("4shoes.jpg"); }
-#card2 { background-image: url("2shoes.jpg"); }
-#card3 { background-image: url("trouser.jpg"); }
-#card4 { background-image: url("denim jean's.jpg"); }
-#card5 { background-image: url("tshirt.jpg"); }
-#card6 { background-image: url("scurt.jpg"); }
-#card7 { background-image: url("denim pant.jpg"); }
-#card8 { background-image: url("sweatshirt.jpg"); }
-
-.cloth-item {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Overlay gradient for better text readability */
-.cloth-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
-  border-radius: 15px;
-  pointer-events: none;
-  z-index: 1;
+.cloth-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(235, 235, 12, 0.7);
 }
 
 .card-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
+  padding: 15px;
 }
-
+.card-content img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 .card-content p {
-  font-size: 1.3rem;
+  margin: 12px 0;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-  letter-spacing: 0.05em;
-  text-transform: capitalize;
+  color: #333;
 }
 
 .btn1 {
-  background: #e91e63;
-  color: white;
+  padding: 10px 20px;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn1:hover {
+  background: #e60000;
+}
+
+/* See All button */
+.see-me {
+  margin-top: 30px;
+  text-align: center;
+}
+.see-btn {
+  display: inline-block;
+  background: #4dd10b;
+  color: black;
   border: none;
   padding: 12px 30px;
   font-size: 1rem;
   border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4);
-}
-
-.btn1:hover {
-  background: #d81b60;
-  box-shadow: 0 6px 15px rgba(216, 27, 96, 0.7);
-}
-
-.cloth-item:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* See All button styling */
-.see-me {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.see-btn {
-  background: #4dd10b;
-  color: black;
-  border: none;
-  padding: 14px 40px;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  text-decoration: none;
   font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
   box-shadow: 0 6px 15px rgba(77, 209, 11, 0.6);
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
 }
-
 .see-btn:hover {
   background: #ebeb0c;
   box-shadow: 0 8px 20px rgba(235, 235, 12, 0.8);
 }
 
-/* See Button */
-.see-btn {
-  background: #4dd10b;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.see-btn:hover {
-  background: #ebeb0c;
-}
-
-/* About Section */
+/* ================== ABOUT SECTION ================== */
 .sec-about {
   padding: 50px 20px;
   background: #043463;
-  color: rgb(119, 53, 240);
+  color: white;
 }
 
 .about-container {
@@ -256,21 +205,17 @@ header .nav ul li a:hover {
   align-items: center;
   justify-content: space-between;
 }
-
 .about-item {
   flex: 1;
   min-width: 300px;
 }
-
 .about-item h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-
 .about-item p {
   margin-bottom: 15px;
   line-height: 1.6;
-  color: white;
 }
 
 .readme {
@@ -284,12 +229,11 @@ header .nav ul li a:hover {
   font-weight: bold;
   transition: background 0.3s ease;
 }
-
 .readme:hover {
   background: #e6b800;
 }
 
-/* Contact Section */
+/* ================== CONTACT SECTION ================== */
 .contact {
   max-width: 700px;
   margin: 60px auto;
@@ -299,26 +243,21 @@ header .nav ul li a:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #222;
 }
-
 .contact p {
   font-size: 1rem;
   color: #555;
   margin-bottom: 25px;
 }
-
-/* Form Styling */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
@@ -328,14 +267,11 @@ header .nav ul li a:hover {
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #e91e63;
   box-shadow: 0 0 6px rgba(233, 30, 99, 0.3);
 }
-
-/* Button Styling */
 .contact-form button {
   background: #e91e63;
   color: white;
@@ -346,190 +282,106 @@ header .nav ul li a:hover {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .contact-form button:hover {
   background: #d81b60;
 }
 
-/* Section General */
-section {
-  padding: 50px 80px;
-}
-
-section h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
-  color: #111;
-}
-
-section p {
-  margin-bottom: 12px;
-  font-size: 16px;
-}
-
-/* Collection */
-.collection {
-  padding: 50px 80px;
-  background: #fff;
-}
-
-.collection h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.collection-item {
-  background: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-/* Cards */
-#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8 {
-  width: 300px;
-  border: 2px solid black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#card1 { background-image: url("4shoes.jpg"); }
-#card2 { background-image: url("2shoes.jpg"); }
-#card3 { background-image: url("trouser.jpg"); }
-#card4 { background-image: url("denim jean's.jpg"); }
-#card5 { background-image: url("tshirt.jpg"); }
-#card6 { background-image: url("scurt.jpg"); }
-#card7 { background-image: url("denim pant.jpg"); }
-#card8 { background-image: url("sweatshirt.jpg"); }
-
-#card1:hover, #card2:hover, #card3:hover, #card4:hover,
-#card5:hover, #card6:hover, #card7:hover, #card8:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(235, 235, 12, 0.7);
-}
-
-/* About Us Section */
+/* ================== ABOUT US ================== */
 .about-us {
   background: #f9f9f9;
   padding: 50px 20px;
-  font-family: Arial, sans-serif;
   line-height: 1.8;
 }
-
 .about-us .container {
   max-width: 1000px;
   margin: auto;
 }
-
 .about-section {
   margin-bottom: 40px;
 }
-
 .about-section h2 {
   font-size: 28px;
   color: #222;
   margin-bottom: 15px;
-  border-left: 4px solid #fbbf24; /* yellow accent */
+  border-left: 4px solid #fbbf24;
   padding-left: 10px;
 }
-
 .about-section p,
 .about-section ul {
   font-size: 16px;
   color: #555;
 }
-
 .about-section ul {
   list-style-type: disc;
   margin-left: 20px;
 }
-footer {
-  background: #222;        
-  color: white;             
-  text-align: center;       
-  padding: 20px 0;          
-}
 
+/* ================== FOOTER ================== */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
 footer p {
   margin: 5px 0;
 }
-
 footer .icon {
   margin-top: 10px;
 }
-
 footer .icon a {
   display: inline-block;
   margin: 0 8px;
+  color: white;
+  text-decoration: none;
 }
-@media (max-width: 600px) {
-  header{
-    flex-direction: column;
-    text-align: center;
-  }
 
-  nav ul {
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  header { padding: 15px 20px; }
+
+  header .nav ul {
+    display: none;
     flex-direction: column;
-    gap: 10px;
-    padding: 0;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
-  .banner{
-    padding-top: 120px;
+  header .nav ul.active { display: flex; }
+  header .hamburger { display: block; }
+
+  .banner {
     height: 40vh;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .clothes-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .contact {
-    width: 90%;
-    padding: 20px;
-  }
- 
+  .banner h1 { font-size: 2.2rem; }
+  .banner p { font-size: 1rem; max-width: 90%; }
+  .banner .btn { padding: 10px 20px; font-size: 0.9rem; }
 
-  .container {
-    
-    align-items: center;
-  }
+  .card-content img { height: 180px; }
+  .card-content p { font-size: 1rem; }
+  .btn1 { padding: 8px 16px; font-size: 0.85rem; }
 
-  .card {
-    width: 90%;   /* cards full width on small screen */
-  }
-
-  footer p {
-    font-size: 12px;
-  }
-
-  footer .icon img {
-    width: 20px;
-  }
+  section { padding: 40px 30px; }
 }
 
-/* Tablet (601px - 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .container {
-    justify-content: space-around;
+@media (max-width: 480px) {
+  .banner {
+    height: 35vh;
+    padding-top: 100px;
   }
+  .banner h1 { font-size: 1.8rem; }
+  .banner p { font-size: 0.9rem; }
 
-  .card {
-    flex: 1 1 45%;   /* 2 cards per row */
-  }
-}
+  .clothes { padding: 20px 10px; }
+  .card-content img { height: 150px; }
+  .card-content p { font-size: 0.9rem; }
 
-/* Desktop (above 901px) */
-@media (min-width: 901px) {
-  .container {
-    justify-content: center;
-  }
-
-  .card {
-    flex: 1 1 30%;   /* 3 cards per row */
-  }
+  section { padding: 30px 15px; }
 }
