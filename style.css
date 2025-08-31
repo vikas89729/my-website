@@ -12,60 +12,137 @@ body {
 }
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* Header */
 header {
-  background: #000;
-  color: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  position: sticky;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
 
 header .logo {
-  font-size: 22px;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: yellow;
 }
 
-header .nav ul {
-  list-style: none;
+/* Nav Links */
+header nav ul {
   display: flex;
-  gap: 25px;
+  list-style: none;
+  gap: 20px;
 }
 
-header .nav ul li a {
-  color: #fff;
+header nav ul li a {
   text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: white;
+  padding: 5px 10px;
+  transition: background 0.3s;
 }
 
-header .nav ul li a:hover {
-  color: #ffcc00;
+header nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
 }
 
+/* Hamburger */
 header .hamburger {
   display: none;
+  font-size: 2rem;
   cursor: pointer;
-  width: 25px;
-  height: 20px;
-  position: relative;
 }
-header .hamburger span {
-  background: #fff;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  border-radius: 2px;
-  transition: 0.3s ease;
+header .search-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-header .hamburger span:nth-child(1) { top: 0; }
-header .hamburger span:nth-child(2) { top: 8px; }
-header .hamburger span:nth-child(3) { top: 16px; }
+
+header .search-container input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.7rem;
+  outline: none;
+}
+
+header .search-container button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #4dd10b;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+header .search-container button:hover {
+  background-color: #38a700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header .hamburger {
+    display: block;
+  }
+   header .search-container {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  header .search-container input {
+    flex: 1;
+  }
+
+  header .search-container button {
+    flex: none;
+  }
+
+  header nav {
+    position: absolute;
+    top: 60px; /* height of header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: none; /* hidden by default */
+    z-index: 1000;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  header nav ul li {
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+
+  header nav ul li a {
+    display: block;
+    padding: 12px 0;
+  }
+
+  header nav.active {
+    display: block;
+  }
+}
+
 
 
 .banner {
@@ -300,7 +377,7 @@ header .hamburger span:nth-child(3) { top: 16px; }
 }
 .about-section h2 {
   font-size: 28px;
-  color: #222;
+  color: #2362eb;
   margin-bottom: 15px;
   border-left: 4px solid #fbbf24;
   padding-left: 10px;
@@ -308,7 +385,7 @@ header .hamburger span:nth-child(3) { top: 16px; }
 .about-section p,
 .about-section ul {
   font-size: 16px;
-  color: #555;
+  color: #555555;
 }
 .about-section ul {
   list-style-type: disc;
@@ -317,7 +394,7 @@ header .hamburger span:nth-child(3) { top: 16px; }
 
 
 footer {
-  background: #222;
+  background: #db2828;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -334,72 +411,8 @@ footer .icon a {
   color: white;
   text-decoration: none;
 }
-
-
-@media (max-width: 768px) {
-  header { padding: 15px 20px; }
-
-  header .nav ul {
-    display: none;
-    flex-direction: column;
-    background: #000;
-    position: absolute;
-    top: 60px;
-    right: 40px;
-    border-radius: 8px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  header .nav ul.active { display: flex; }
-  header .hamburger { display: block; }
-
-  .banner {
-    height: 40vh;
-    padding-top: 120px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .banner h1 { font-size: 2.2rem; }
-  .banner p { font-size: 1rem; max-width: 90%; }
-  .banner .btn { padding: 10px 20px; font-size: 0.9rem; }
-
-  .card-content img { height: 180px; }
-  .card-content p { font-size: 1rem; }
-  .btn1 { padding: 8px 16px; font-size: 0.85rem; }
-
-  section { padding: 40px 30px; }
+.box h2{
+text-align: center;
 }
 
-@media (max-width: 480px) {
-  .banner {
-    height: 35vh;
-    padding-top: 100px;
-  }
-  .banner h1 { font-size: 1.8rem; }
-  .banner p { font-size: 0.9rem; }
 
-  .clothes { padding: 20px 10px; }
-  .card-content img { height: 150px; }
-  .card-content p { font-size: 0.9rem; }
-
-  section { padding: 30px 15px; }
-}
-
-header .hamburger {
-  display: none;
-  cursor: pointer;
-  width: 25px;
-  height: 20px;
-  position: relative;
-}
-header .hamburger span {
-  background: #fff;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-header .hamburger span:nth-child(1) { top: 0; }
-header .hamburger span:nth-child(2) { top: 8px; }
-header .hamburger span:nth-child(3) { top: 16px; }
