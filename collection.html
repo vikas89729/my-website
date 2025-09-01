@@ -12,23 +12,23 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="logo">Fashion Store</div>
-         <div class="hamburger">&#9776;</div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="collection.html">COLLECTION</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                
-                <li><a href="contact.html">CONTACT </a></li>
-            </ul>
-        </nav>
-          <div class="search-container">
+  <header>
+    <div class="logo">Fashion Store</div>
+     <div class="hamburger">&#9776;</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="collection.html">COLLECTION</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+      <div class="search-container">
     <input type="text" placeholder="Search..." id="searchInput">
     <button id="searchBtn">🔍</button>
   </div>
-    </header>
+
+  </header>
 
     <!-- Product Section -->
 <section class="cl-container">
@@ -186,6 +186,17 @@
             </a>
         </div>
     </footer>
+    <div id="product-detail" class="product-detail-overlay">
+  <div class="product-detail-content">
+    <span class="close-btn">&times;</span>
+    <img id="detail-img" src="https://m.media-amazon.com/images/I/41h1CpignKL.jpg" alt="men's t-shirt">
+    <h2 id="detail-name"></h2>
+    <p id="detail-price"></p>
+    <p id="detail-description"></p>
+    <button class="buy-now">Buy Now</button>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+</div>
     <script src="script.js"></script>
 </body>
 
