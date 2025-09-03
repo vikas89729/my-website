@@ -38,6 +38,7 @@ header .logo {
 header .nav {
   flex: 1;
   margin-left: 40px;
+  
 }
 
 header .nav ul {
@@ -403,4 +404,40 @@ footer .icon a {
 text-align: center;
 }
 
+/* Fade-in for banner button */
+.banner .btn {
+  animation: fadeInUp 1s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clothes cards fade & slide on scroll */
+.cloth-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-in-out;
+}
+
+.cloth-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover animation for Buy Now buttons */
+.btn1 {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn1:hover {
+  transform: scale(1.1);
+  background: #1abc9c;
+  color: #fff;
+}
 

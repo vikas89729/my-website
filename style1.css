@@ -99,7 +99,7 @@ button {
   font-size: 18px;
   color: #d00000;
 }
-.product-detail-overlay {
+/* .product-detail-overlay {
   display: none;
   position: fixed;
   top: 0; left: 0;
@@ -108,7 +108,7 @@ button {
   z-index: 2000;
   justify-content: center;
   align-items: center;
-  display: flex; /* needed to center content when visible */
+  display: flex; /
 }
 
 .product-detail-content {
@@ -134,4 +134,4 @@ button {
   right: 15px;
   font-size: 25px;
   cursor: pointer;
-}
+} */
